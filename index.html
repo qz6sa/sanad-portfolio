@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elite Cybersecurity Professional | Penetration Testing | Threat Analysis | Security Audits">
+    <title>Sanad Jaber</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main-full.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="glitch-text" data-text="INITIALIZING">INITIALIZING</div>
+            <div class="loader-text">SECURITY PROTOCOLS</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="loader-percentage" id="loaderPercentage">0%</div>
+            <div class="matrix-overlay"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="glitch-logo" data-text="<CYBER/>"><CYBER/></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scan Lines Overlay -->
+    <div class="scan-lines"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <canvas id="matrixCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-shield-halved"></i> SECURITY SPECIALIST
+            </div>
+            <h1 class="hero-title glitch-text" data-text="SANAD JABER">
+                SANAD JABER
+            </h1>
+            <div class="hero-subtitle">
+                <span id="typed"></span>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="3">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="7">0</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-label">Years Old</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button class="cta-button magnetic" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    <span>INITIATE CONTACT</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="cta-button-secondary magnetic" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                    <span>VIEW PROJECTS</span>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>SCROLL TO EXPLORE</span>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;WHO_AM_I&gt;</span>
+                <h2 class="section-title">ABOUT ME</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">bio.sh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">root@cybersec:~$</span>
+                            <span class="command">cat about.txt</span>
+                        </div>
+                        <div class="terminal-output" id="terminalText">
+                            <p>╔══════════════════════════════════════════════════════════════════════════╗</p>
+                            <p>║                    SANAD JABER - SECURITY PROFILE                        ║</p>
+                            <p>╚══════════════════════════════════════════════════════════════════════════╝</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] IDENTITY:</span></p>
+                            <p>    → Full Name: Sanad Jaber</p>
+                            <p>    → Age: 20 Years Old</p>
+                            <p>    → Location: Amman, Jordan</p>
+                            <p>    → Specialization: CyberSecurity & Penetration Testing</p>
+                            <p>    → Email: sndjaber@gmail.com</p>
+                            <p>    → Phone: +962796009508</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] PROFESSIONAL SUMMARY:</span></p>
+                            <p>    Highly motivated and detail-oriented cybersecurity professional with extensive</p>
+                            <p>    hands-on experience in penetration testing, web application security, and</p>
+                            <p>    automation testing. Passionate about identifying vulnerabilities, developing</p>
+                            <p>    secure solutions, and staying ahead of emerging cyber threats.</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] CERTIFICATIONS [7 ACTIVE]:</span></p>
+                            <p>    → Certified Ethical Hacker (CEH) - EC-Council</p>
+                            <p>    → CompTIA Security+ - CompTIA</p>
+                            <p>    → eJPTv2 (eLearnSecurity Junior Penetration Tester) - Udemy</p>
+                            <p>    → Jr Penetration Tester Path - TryHackMe</p>
+                            <p>    → Google Cybersecurity Professional Certificate - Google</p>
+                            <p>    → Pre Security Learning Path - TryHackMe</p>
+                            <p>    → Scientific Computing with Python - FreeCodeCamp</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] CORE COMPETENCIES:</span></p>
+                            <p>    • Penetration Testing & Vulnerability Assessment</p>
+                            <p>    • Web Application Security (OWASP Top 10)</p>
+                            <p>    • Network Security & Exploitation Techniques</p>
+                            <p>    • Python Development & Security Scripting</p>
+                            <p>    • Burp Suite, Nmap, Metasploit, Kali Linux</p>
+                            <p>    • Mobile Automation Testing (Appium, TestNG)</p>
+                            <p>    • Secure Coding Practices & Code Review</p>
+                            <p>    • Linux/Windows System Administration</p>
+                            <p>    • Social Engineering & Reconnaissance</p>
+                            <p>    • Risk Assessment & Security Operations</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] ACHIEVEMENTS & STATISTICS:</span></p>
+                            <p>    → 7+ Industry Certifications Obtained</p>
+                            <p>    → 3+ Years of Professional Experience</p>
+                            <p>    → 2 Major Organizations Served</p>
+                            <p>    → 100+ Vulnerabilities Identified and Remediated</p>
+                            <p>    → 3 Open-Source Security Tools Published</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] PROFESSIONAL PHILOSOPHY:</span></p>
+                            <p>    "In cybersecurity, the best offense is a great defense. I believe in</p>
+                            <p>    proactive security measures, continuous learning, and ethical practices.</p>
+                            <p>    My mission is to help organizations build robust security postures by</p>
+                            <p>    identifying weaknesses before malicious actors can exploit them. Every</p>
+                            <p>    vulnerability found is an opportunity to strengthen the digital fortress."</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] LEARNING & DEVELOPMENT:</span></p>
+                            <p>    Continuously expanding knowledge through hands-on practice, CTF challenges,</p>
+                            <p>    bug bounty programs, and staying updated with the latest security research.</p>
+                            <p>    Active participant in the cybersecurity community, contributing to open-source</p>
+                            <p>    security tools and sharing knowledge with aspiring security professionals.</p>
+                            <p>&nbsp;</p>
+                            <p><span style="color: #00ff41;">[+] AVAILABILITY:</span></p>
+                            <p>    Open to freelance penetration testing projects, security consultations,</p>
+                            <p>    and full-time cybersecurity positions. Available for remote and on-site work.</p>
+                            <p>&nbsp;</p>
+                            <p>╔══════════════════════════════════════════════════════════════════════════╗</p>
+                            <p>║  "The only truly secure system is one that is powered off, cast in a    ║</p>
+                            <p>║   block of concrete and sealed in a lead-lined room with armed guards."  ║</p>
+                            <p>║                                                    - Gene Spafford        ║</p>
+                            <p>╚══════════════════════════════════════════════════════════════════════════╝</p>
+                        </div>
+                        <div class="terminal-cursor"></div>
+                    </div>
+                </div>
+
+                <div class="about-skills">
+                    <h3 class="skills-title">TECHNICAL ARSENAL</h3>
+                    
+                    <!-- Penetration Testing & Ethical Hacking -->
+                    <h4 class="skill-category">Penetration Testing & Ethical Hacking</h4>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Penetration Testing</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Ethical Hacking & CEH Methodologies</span>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 93%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Exploitation Techniques</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Post-Exploitation</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Vulnerability Assessment</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Footprinting & Reconnaissance</span>
+                            <span class="skill-percentage">91%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 91%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Enumeration</span>
+                            <span class="skill-percentage">89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 89%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Network & Web Security -->
+                    <h4 class="skill-category">Network & Web Security</h4>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Network Security</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Web Security Testing</span>
+                            <span class="skill-percentage">94%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 94%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Web Application Security & OWASP Top 10</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">DNS & Networking Basics</span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 87%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Programming & Scripting -->
+                    <h4 class="skill-category">Programming & Scripting</h4>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python (Security & Development)</span>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 93%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python CLI Development</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript & Web Development</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">HTML5 & CSS3</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Secure Coding Practices</span>
+                            <span class="skill-percentage">89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 89%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Security Tools & Platforms -->
+                    <h4 class="skill-category">Security Tools & Platforms</h4>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Burp Suite</span>
+                            <span class="skill-percentage">94%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 94%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Nmap & Network Scanning</span>
+                            <span class="skill-percentage">91%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 91%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Kali Linux & Terminal</span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Linux & Terminal Command Line</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Password Cracking Tools</span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 87%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">SIEM & Security Operations</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Testing & Automation -->
+                    <h4 class="skill-category">Testing & Automation</h4>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Mobile Automation (Appium)</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">TestNG & Unit Testing</span>
+                            <span class="skill-percentage">86%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 86%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Performance Optimization</span>
+                            <span class="skill-percentage">89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 89%"></div>
+                        </div>
+                    </div>
+
+                    <!-- System Administration -->
+                    <h4 class="skill-category">System Administration</h4>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Windows Security & OS Maintenance</span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 87%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Hardware Troubleshooting & Repair</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Virtual Machines & System Setup</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="--skill-width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills Section -->
+                    <h3 class="skills-title" style="margin-top: 60px;">PROFESSIONAL SKILLS</h3>
+                    <div class="soft-skills-grid">
+                        <div class="soft-skill-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Analytical Thinking</h4>
+                            <p>Breaking down complex security challenges into actionable solutions</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Problem Solving</h4>
+                            <p>Identifying vulnerabilities and developing creative mitigation strategies</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-search"></i>
+                            <h4>Attention to Detail</h4>
+                            <p>Meticulous code review and thorough penetration testing</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-comments"></i>
+                            <h4>Communication</h4>
+                            <p>Translating technical findings into clear reports and presentations</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Team Collaboration</h4>
+                            <p>Working effectively with cross-functional security teams</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Time Management</h4>
+                            <p>Prioritizing multiple security assessments and meeting deadlines</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Adaptability</h4>
+                            <p>Quickly learning new tools and staying current with threats</p>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-chess"></i>
+                            <h4>Critical Thinking</h4>
+                            <p>Evaluating security architecture and risk assessment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <h3 class="certs-title">CERTIFICATIONS</h3>
+                <div class="cert-grid-images">
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/CEH.jpg" alt="Certified Ethical Hacker">
+                        <div class="cert-info">
+                            <h4>Certified Ethical Hacker</h4>
+                            <p>EC-Council</p>
+                        </div>
+                    </div>
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/Security+.jpg" alt="CompTIA Security+">
+                        <div class="cert-info">
+                            <h4>CompTIA Security+</h4>
+                            <p>CompTIA</p>
+                        </div>
+                    </div>
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/eJPTv2.jpg" alt="eJPTv2">
+                        <div class="cert-info">
+                            <h4>eJPTv2</h4>
+                            <p>Udemy</p>
+                        </div>
+                    </div>
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/Jr Penetration Tester.jpg" alt="Jr Penetration Tester">
+                        <div class="cert-info">
+                            <h4>Jr Penetration Tester</h4>
+                            <p>TryHackMe</p>
+                        </div>
+                    </div>
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/Google Cybersecurity.jpg" alt="Google Cybersecurity">
+                        <div class="cert-info">
+                            <h4>Google Cybersecurity</h4>
+                            <p>Google</p>
+                        </div>
+                    </div>
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/TryHackMe Pre Security.jpg" alt="Pre Security Learning Path">
+                        <div class="cert-info">
+                            <h4>Pre Security Path</h4>
+                            <p>TryHackMe</p>
+                        </div>
+                    </div>
+                    <div class="cert-card magnetic">
+                        <img src="assets/images/Python.jpg" alt="Scientific Computing with Python">
+                        <div class="cert-info">
+                            <h4>Scientific Computing</h4>
+                            <p>FreeCodeCamp - Python</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;SERVICES&gt;</span>
+                <h2 class="section-title">WHAT I DO</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="service-title">Penetration Testing</h3>
+                    <p class="service-description">
+                        Comprehensive security assessments simulating real-world attacks to identify and exploit vulnerabilities before malicious actors do.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Network Penetration Testing</li>
+                        <li><i class="fas fa-check"></i> Web Application Testing</li>
+                        <li><i class="fas fa-check"></i> Mobile App Security</li>
+                        <li><i class="fas fa-check"></i> Social Engineering</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">Automation Tester</h3>
+                    <p class="service-description">
+                        Professional automation testing services to ensure software quality through comprehensive test automation frameworks and continuous integration.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Test Automation Framework</li>
+                        <li><i class="fas fa-check"></i> Selenium & Playwright</li>
+                        <li><i class="fas fa-check"></i> API Testing</li>
+                        <li><i class="fas fa-check"></i> Performance Testing</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Developer</h3>
+                    <p class="service-description">
+                        Full-stack web development creating modern, responsive, and secure websites using cutting-edge technologies and best practices.
+                    </p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Front-End Development</li>
+                        <li><i class="fas fa-check"></i> Back-End Development</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Web Security</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;PORTFOLIO&gt;</span>
+                <h2 class="section-title">FEATURED PROJECTS</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="project-filters">
+                <button class="filter-btn active magnetic" data-filter="all">All Projects</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="tools">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-shield-virus project-icon"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">VOIDEX</h3>
+                            <div class="project-number">01</div>
+                        </div>
+                        <p class="project-description">
+                            A comprehensive web penetration testing toolkit designed for security professionals and ethical hackers. Includes 5 powerful tools for discovering and testing web application vulnerabilities.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Pentesting</span>
+                            <span class="tag">Web Security</span>
+                            <span class="tag">Vulnerability Scanner</span>
+                            <span class="tag">Security Tools</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/qz6sa/VOIDEX" target="_blank" class="project-link magnetic">
+                                <i class="fas fa-external-link-alt"></i> <span>View Project</span>
+                            </a>
+                            <a href="https://github.com/qz6sa/VOIDEX" target="_blank" class="project-link magnetic">
+                                <i class="fab fa-github"></i> <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-key project-icon"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">PassVortex</h3>
+                            <div class="project-number">02</div>
+                        </div>
+                        <p class="project-description">
+                            An advanced password strength checker built with React 18, TypeScript, and modern web technologies. Analyze password security with real-time feedback, pattern detection, and breach checking.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React 18</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Password Security</span>
+                            <span class="tag">Web App</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/qz6sa/PassVortex" target="_blank" class="project-link magnetic">
+                                <i class="fas fa-external-link-alt"></i> <span>View Project</span>
+                            </a>
+                            <a href="https://github.com/qz6sa/PassVortex" target="_blank" class="project-link magnetic">
+                                <i class="fab fa-github"></i> <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <div class="project-icon-wrapper">
+                        <i class="fas fa-globe project-icon"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">WebZor</h3>
+                            <div class="project-number">03</div>
+                        </div>
+                        <p class="project-description">
+                            The ultimate all-in-one web analysis tool for developers, SEO specialists, security researchers, and digital marketers. Comprehensive website analysis at your fingertips.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Web Analysis</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/qz6sa/WebZor" target="_blank" class="project-link magnetic">
+                                <i class="fas fa-external-link-alt"></i> <span>View Project</span>
+                            </a>
+                            <a href="https://github.com/qz6sa/WebZor" target="_blank" class="project-link magnetic">
+                                <i class="fab fa-github"></i> <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;CAREER_PATH&gt;</span>
+                <h2 class="section-title">PROFESSIONAL JOURNEY</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3 class="timeline-title">Automation Tester</h3>
+                        <h4 class="timeline-company">Royal Scientific Society</h4>
+                        <p class="timeline-description">
+                            Developing and implementing automated testing frameworks to ensure software quality and security compliance.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li><i class="fas fa-angle-right"></i> Implemented automated security testing protocols</li>
+                            <li><i class="fas fa-angle-right"></i> Enhanced test coverage and efficiency</li>
+                            <li><i class="fas fa-angle-right"></i> Collaborated with development teams on security best practices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3 class="timeline-title">Penetration Tester & Web Developer</h3>
+                        <h4 class="timeline-company">Gamers Cash Company</h4>
+                        <p class="timeline-description">
+                            Conducted penetration testing on company infrastructure while developing secure web applications.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li><i class="fas fa-angle-right"></i> Performed comprehensive security assessments</li>
+                            <li><i class="fas fa-angle-right"></i> Developed secure web applications with modern frameworks</li>
+                            <li><i class="fas fa-angle-right"></i> Identified and remediated critical vulnerabilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3 class="timeline-title">Computer & Laptop Technician</h3>
+                        <h4 class="timeline-company">Gamers Cash Company</h4>
+                        <p class="timeline-description">
+                            Provided hardware and software technical support, system maintenance, and troubleshooting services.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li><i class="fas fa-angle-right"></i> Diagnosed and repaired hardware/software issues</li>
+                            <li><i class="fas fa-angle-right"></i> Performed system installations and upgrades</li>
+                            <li><i class="fas fa-angle-right"></i> Delivered excellent customer service and support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-number" data-count="7">0</div>
+                    <div class="stat-label">Certifications Earned</div>
+                    <div class="stat-glow"></div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-number" data-count="3">0</div>
+                    <div class="stat-label">Years Experience</div>
+                    <div class="stat-glow"></div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number" data-count="2">0</div>
+                    <div class="stat-label">Companies Worked</div>
+                    <div class="stat-glow"></div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-label">Age</div>
+                    <div class="stat-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;CONTACT&gt;</span>
+                <h2 class="section-title">INITIATE SECURE CONNECTION</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-grid" style="justify-content: center;">
+                <div class="contact-info">
+                    <h3 class="contact-title">Let's Secure Your Systems</h3>
+                    <p class="contact-description">
+                        Ready to fortify your digital infrastructure? Get in touch for a comprehensive security assessment.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:sndjaber@gmail.com">sndjaber@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+962796009508">+962 79 600 9508</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Amman, Jordan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/qz6sa" target="_blank" class="social-link magnetic" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sanad-jaber-315076275" target="_blank" class="social-link magnetic" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sanad.codex" target="_blank" class="social-link magnetic" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="glitch-logo" data-text="<CYBER/>"><CYBER/></span>
+                </div>
+                <p class="footer-text">
+                    Securing the digital frontier, one vulnerability at a time.
+                </p>
+                <p class="footer-copyright">
+                    © 2025 Sanad Jaber. All rights reserved. | Encrypted & Secured
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
